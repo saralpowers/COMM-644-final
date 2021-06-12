@@ -1,0 +1,43 @@
+.deliveryinfo, .orderbuild, .billinginfo {
+  background-color: #cde6ff;
+  padding-left: 50px;
+}
+
+fieldset {
+  width: 400px;
+}
+
+img {
+  height: 200px;
+  width: 275px;
+}
+
+.error {
+  border:2px solid red;
+}
+
+.deliveryinfo p {
+  color: red;
+}
+
+.billinginfo p {
+  color: red;
+}
+
+.price {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: red;
+  height: 50px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  font-size: 2em;
+  border-radius: 10px;
+ }
+
+#couponPage {
+  text-align: center;
+
+ }

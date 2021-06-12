@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pisa Pizza Billing Info</title>
+
+    <!-- to replace top icon -->
+    <link rel="icon" href="/images/pizza.ico">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="css/styles.css" rel="stylesheet">
+    
+    <script src="/js/billing.js"></script>
+
+</head>
+<body>
+
+    <div class="billinginfo">
+        <form id="billingform"><fieldset>
+          <legend>Billing Information</legend>
+
+          <input type="checkbox" id="same" name="same" onchange="autoFill()">
+          <label for="same">Check if same as delivery information</label><br><br>
+            
+          <label name="fullname">Full Name:</label><br>
+          <input type="text" id="fullname">
+          <p id="namevalid"></p>
+
+          <label for="address">Street Address:</label><br>
+          <input type="text" id="address"><p id="addressvalid"></p>
+      
+          <label for="optnum">Apartment, Suite, or Room Number (optional):</label><br>
+          <input type="optnum" id="optnum"><br><br>
+            
+          <label for="city">City:</label><br>
+          <input type="text" id="city"><p id="cityvalid"></p>
+
+          <label for="state">State:</label><br>
+          <input type="text" id="state"><p id="statevalid"></p>
+
+          <label for="zip">Zip Code:</label><br>
+          <input type="text" id="zip"><p id="zipvalid"></p>
+
+          <label for="cardnum">Credit Card Number:</label><br>
+          <input type="text" id="cardnum"><p id="cardnumvalid"></p>
+
+          <label for="cvccode">CVC Code:</label><br>
+          <input type="text" id="cvccode" placeholder="xxx"><p id="cvcvalid"></p><br>
+
+          <label>Card Expiration Date (month):</label>
+          <select id="monthId"></select><br><br>
+
+          <label>Card Expiration Date (year):</label>
+          <select id="yearId"></select><p id="datevalid"></p>
+      
+          <input type="submit" class="btn btn-primary" name="Submit" id="submit" value="Submit">
+
+        </fieldset>
+        </form>
+    </div>
+
+</body>
+</html>

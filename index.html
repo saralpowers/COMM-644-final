@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Pisa Pizza</title>
+
+    <!-- to replace top icon -->
+    <link rel="icon" href="/images/pizza.ico">
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/">
+
+    <!-- Bootstrap link to css, using a older version to get the site to work like template -->
+    <link href="https://v4-alpha.getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    <!-- Bootstrap link to JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <link href="css/narrow-jumbotron.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+
+    <script src="/js/script.js"></script>
+
+</head>
+<body>
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills float-right">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Good <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http:\\www.dominos.com">Better</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http:\\www.pizzahut.com">Best</a>
+            </li>
+          </ul>
+        </nav>
+        <div><img src="/images/toweropt.png" alt="Italian Trulli"></div>
+      </div>
+  
+      <div class="jumbotron">
+        <h1 class="display-3">Grab a Pisa Pizza</h1>
+        <p class="lead">It doesn't look right, and the taste won't knock you over, either.</p>
+        <p><a class="btn btn-lg btn-info" href="#" role="button" id="coupon">$$ Today's Coupons $$</a></p>
+      </div>
+  
+      <div class="deliveryinfo">
+        <form id="locationform"><fieldset>
+          <legend>Delivery Information</legend>
+            
+          <label name="fullname">Full Name:</label><br>
+          <input type="text" id="fullname">
+          <p id="namevalid"></p>
+
+          <label for="addresstype">Select Address Type:</label><br>
+          <select name="addresstype" id="addresstype" onchange='OtherOption(this.value);'>
+            <option value="default">select</option>
+            <option value="house">House</option>
+            <option value="apartment">Apartment</option>
+            <option value="business">Business</option>
+            <option value="campus">Campus</option>
+            <option value="hotel">Hotel</option>
+            <option value="dorm">Dorm</option>
+            <option value="other">Other</option>
+          </select><p id="typevalid"></p>
+            <input type="text" name="other" id="other" style="display:none;" placeholder="Enter type here"><p id="othervalid"></p>
+
+          <label for="address">Street Address:</label><br>
+          <input type="text" id="address"><p id="addressvalid"></p>
+      
+          <label for="optnum">Apartment, Suite, or Room Number (optional):</label><br>
+          <input type="optnum" id="optnum"><br><br>
+            
+          <label for="city">City:</label><br>
+          <input type="text" id="city"><p id="cityvalid"></p>
+
+          <label for="state">State:</label><br>
+          <input type="text" id="state"><p id="statevalid"></p>
+
+          <label for="zip">Zip Code:</label><br>
+          <input type="text" id="zip"><p id="zipvalid"></p>
+
+          <label for="phone">Phone Number:</label><br>
+          <input type="text" id="phone"><br><p id="phonevalid"></p>
+
+          <label for="email">Email:</label><br>
+          <input type="text" id="email"><p id="emailvalid"></p><br>
+      
+          <input type="button" class="btn btn-primary" name="Continue" id="continue" value="Continue">
+          <input type="button" class="btn btn-primary" name="Clear" id="clear" value="Clear Delivery Info"><br><br>
+        </fieldset>
+        </form>
+      </div>
+
+      <hr>
+
+      <div class="orderbuild">
+        <form id="orderform"><fieldset>
+          <legend>Build Your Order</legend>
+          
+          <p>Please select your dough:</p>
+          <input type="radio" id="handtoss" name="dough" value="handTossed" onclick="changeDough(this.value)">
+          <label for="handtoss">Hand Tossed</label><br>
+          <input type="radio" id="thin"  name="dough" value="thinCrust" onclick="changeDough(this.value)">
+          <label for="thin">Thin Crust</label><br>
+          <input type="radio" id="nystyle"  name="dough" value="newYorkStyle" onclick="changeDough(this.value)">
+          <label for="nystyle">New York Style</label><br>
+          <input type="radio" id="gluten" name="dough" value="glutenFree" onclick="changeDough(this.value)">
+          <label for="gluten">Gluten Free</label><br><br>
+
+          <p>Please select pizza size:</p>
+            <select name="size" id="size">
+            <option value="" id="size">Select</option>
+            </select><br><br>
+
+          <p>Please select a cheese option:</p>
+            <select id="cheese">
+            <option id="light">Light: no charge</option>
+            <option id="normal" selected="selected">Normal: no charge</option>
+            <option id="extra">Extra: +$2.99</option>
+            <option id="double">Double: +$3.99</option>
+            </select><br><br>
+
+            <p>Please select a sauce option:</p>
+            <select id="sauce">
+            <option id="regular" selected="selected">Regular Tomato: no charge</option>
+            <option id="hearty">Hearty Tomato: +$.99</option>
+            <option id="bbq">BBQ Sauce: +$1.99</option>
+            </select><br><br>
+
+          <fieldset id="toppings" name="toppings"><p>Select additional toppings (+$.99 each):</p>
+            <input type="checkbox" id="pepperoni" name="toppings" value="pepperoni">
+            <label for="pepperoni"> Pepperoni</label><br>
+            <input type="checkbox" id="sausage" name="toppings" value="sausage">
+            <label for="sausage"> Sausage</label><br>
+            <input type="checkbox" id="ham" name="toppings" value="ham">
+            <label for="ham"> Ham</label><br>
+            <input type="checkbox" id="bacon" name="toppings" value="bacon">
+            <label for="bacon"> Bacon</label><br>
+            <input type="checkbox" id="salami" name="toppings" value="salami">
+            <label for="salami"> Salami</label><br>
+            <input type="checkbox" id="peppers" name="toppings" value="peppers">
+            <label for="peppers"> Peppers</label><br>
+            <input type="checkbox" id="olives" name="toppings" value="olives">
+            <label for="olives"> Olives</label><br>
+            <input type="checkbox" id="jalapenos" name="toppings" value="jalapenos">
+            <label for="jalapenos"> Jalapenos</label><br>
+            <input type="checkbox" id="mushrooms" name="toppings" value="mushrooms">
+            <label for="mushrooms"> Mushrooms</label><br>
+            <input type="checkbox" id="pineapple" name="toppings" value="pineapple">
+            <label for="pineapple"> Pineapple</label><br>
+            <input type="checkbox" id="onion" name="toppings" value="onion">
+            <label for="onion"> Onions</label><br>
+          </fieldset>
+
+          <input type="button" class="btn btn-primary" name="finished" id="finished" value="Finished Building Pizza"><br><br>
+
+        </fieldset>
+        </form><hr>
+    </div>
+
+        <footer class="footer">
+          <p>Copyright &copy; 2021 | Pisa Pizza Inc.</p>
+        </footer>
+    </div>
+
+    <div id="price" class="price"></div>
+
+</body>
+</html>
